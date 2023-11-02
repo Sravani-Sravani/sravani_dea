@@ -1,0 +1,87 @@
+GIT COMMANDS
+
+--> git init
+--> git add .
+--> git remote add origin https://
+--> git commit -m "initial commit"
+--> git push -u origin main
+
+To change the branch
+--> git branch -M main
+--> git checkout <branch name> 
+
+To change repository
+--> git remote set-url origin new.git.url/here
+
+To view existing remotes
+--> git remote -v
+
+ksravani1@IN-KSRAVANI1 MINGW64 ~/Desktop/CMS (new)
+$ git init
+Initialized empty Git repository in C:/Users/ksravani1/Desktop/CMS/.git/
+
+ksravani1@IN-KSRAVANI1 MINGW64 ~/Desktop/CMS (master)
+$ git remote add origin https://104.211.240.60/ysr-project-group/ehs.git
+
+ksravani1@IN-KSRAVANI1 MINGW64 ~/Desktop/CMS (master)
+$ git remote set-url origin git@104.211.240.60:ysr-project-group/ehs.git
+
+ksravani1@IN-KSRAVANI1 MINGW64 ~/Desktop/CMS (master)
+$ git checkout -b Patient
+Switched to a new branch 'Patient'
+
+ksravani1@IN-KSRAVANI1 MINGW64 ~/Desktop/CMS (Patient)
+$ git pull origin Patient
+remote: Enumerating objects: 128, done.
+remote: Counting objects: 100% (31/31), done.
+remote: Compressing objects: 100% (25/25), done.
+remote: Total 128 (delta 15), reused 5 (delta 5), pack-reused 97
+Receiving objects: 100% (128/128), 1.50 MiB | 13.55 MiB/s, done.
+Resolving deltas: 100% (50/50), done.
+From 104.211.240.60:ysr-project-group/ehs
+ * branch            Patient    -> FETCH_HEAD
+ * [new branch]      Patient    -> origin/Patient
+
+
+cd existing_repo
+git remote add origin https://104.211.240.60/ysr-project-group/cms-portal.git
+git branch -M main
+git push -uf origin main
+
+
+
+
+EHS
+-------------
+
+
+git init
+git add .
+git remote add origin https://104.211.240.60/ysr-project-group/ehs.git
+git remote set-url origin git@104.211.240.60:ysr-project-group/ehs.git
+git checkout -b sravani-Operations
+git pull origin develop
+
+
+git -c http.sslVerify=false clone https://115.124.114.53/iitmadras/swayamplus.git
+
+git remote add origin https://115.124.114.53/iitmadras/swayamplus.git
+
+
+git remote set-url origin git@115.124.114.53:iitmadras/swayamplus.git
+
+git remote set-url origin https://115.124.114.53/iitmadras/swayamplus.git
+
+
+git -c http.sslVerify=false clone https://example.com/path/to/git
+
+$ git remote add origin https://115.124.114.53/ysr-project-group/ysr-liferay-portal.git
+error: remote origin already exists.
+
+ksravani1@IN-KSRAVANI1 MINGW64 /c/Liferay_YSR/projects/YSR-Portal/YSR-Gitlab/ysr-liferay-portal (main)
+$ git remote set-url origin git@115.124.114.53:ysr-project-group/ysr-liferay-portal.git
+$ git config http.sslVerify "false"
+
+ksravani1@IN-KSRAVANI1 MINGW64 /c/Liferay_YSR/projects/YSR-Portal/YSR-Gitlab/ysr-liferay-portal (production)
+$ git remote set-url origin https://115.124.114.53/ysr-project-group/ysr-liferay-portal.git
+

@@ -1,0 +1,65 @@
+MUI INSTALLATION
+
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/material @mui/styled-engine-sc styled-components
+npm install @mui/icons-material
+
+DATE 
+
+npm install dayjs --save
+npm install @mui/x-date-pickers
+
+shift+alt+f - tree format
+
+HEIGHT OF INPUT FIELD
+
+inputProps={{
+    style: {
+      height: "50px",
+    },
+  }}
+
+FORMIK
+
+npm i formik-material-ui
+
+ROUTER
+
+npm i react-router-dom
+npm install @hookform/resolvers
+
+SUSPENSE
+
+Displaying a fallback while content is loading -->  <Suspense fallback={<Loading />}>
+
+BACKGROUND IMAGE
+
+backgroundImage: `url(${bgImage})`
+
+<Avatar alt="logo" src={logoImage}/>
+
+ROUTING
+
+npm install react-router-dom@6
+
+https://dirask.com/posts/React-react-router-6-basic-routing-example-j4aYq1
+
+
+RESET ( CLEAR FORM)
+
+https://www.spguides.com/reset-form-in-react-js/#:~:text=Reset%20the%20Uncontrolled%20inputs%20in%20the%20Form%20in%20React%20js,-Now%20we%20will&text=By%20clicking%20on%20the%20Reset%20button%20the%20form%20will%20get%20reset.&text=%3E-,The%20Index.,'%3B%20import%20'.%2Findex.
+
+
+You can give inline styling to your card, giving border and box shadow property as none.
+
+<Card style={{ border: "none", boxShadow: "none" }}>
+    ....
+</Card>
+
+Height of textfield
+
+https://smartdevpreneur.com/how-to-set-mui-textfield-height-and-width-the-3-best-ways/
+
+
+https://www.opensource-techblog.com/create-finder-method-for-service.html
+

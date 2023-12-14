@@ -199,3 +199,11 @@ com.kpmg.citizenTables.service.VisitorService#getvisitorcount
 com.liferay.portal.kernel.service.CountryService#getCountries
 com.liferay.portal.kernel.service.RegionService#getRegions
 
+
+Change favicon
+
+Test login --> Site Builder --> Pages --> At top 3 dots symbol like colon --> Configure settings --> Change Favicon
+
+IFRAME
+
+<iframe name="jhansibooking" src="https://test.payplatter.in/SmartCityJhansi" width="100%" height="500px" style="margin-top: 120px;"></iframe>

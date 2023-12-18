@@ -1,0 +1,21 @@
+  eventContent: function(arg) {
+          var event = arg.event;
+          var location = event.extendedProps.location; // Access the "location" field from extendedProps
+          var html = '<td class="fc-list-event-title">' + event.title + '</td>';
+          html += '<td class="fc-list-event-location">' + location + '</td>'; // Display the location
+          return { html: html };
+      },
+
+ info.el.querySelector('fc-list-event-title').after(locationElement);
+
+   eventDidMount: function(info) {
+          if (info.view.type === 'listWeek') {
+              var event = info.event;
+              var location = event.extendedProps.location; // Access the "location" field from extendedProps
+              var locationElement = document.createElement('td');
+              locationElement.classList.add('fc-list-event-location');
+              locationElement.textContent = location;
+              info.el.querySelector('fc-list-event-title').after(locationElement);
+            //  info.el.appendChild(locationElement);
+          }
+      },

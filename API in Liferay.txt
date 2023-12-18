@@ -1,0 +1,11 @@
+Creating API in Liferay
+
+In table-service module go to "com.kpmg.citizenTables.service.impl" package ---> VisitorServiceImpl for creating API
+
+Control Panel ---> Security ---> Service Access Policy ---> SYSTEM_DEFAULT ---> Switch to Advanced Mode ---> Add API
+
+com.kpmg.citizenTables.service.VisitorService#getaddvisitorcount
+com.kpmg.citizenTables.service.VisitorService#getvisitorcount
+com.liferay.portal.kernel.service.CountryService#getCountries
+com.liferay.portal.kernel.service.RegionService#getRegions
+

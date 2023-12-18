@@ -1,0 +1,4 @@
+com.kpmg.citizenTables.service.VisitorService#getaddvisitorcount
+com.kpmg.citizenTables.service.VisitorService#getvisitorcount
+com.liferay.portal.kernel.service.CountryService#getCountries
+com.liferay.portal.kernel.service.RegionService#getRegions

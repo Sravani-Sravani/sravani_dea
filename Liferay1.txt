@@ -1,0 +1,201 @@
+Be sure, you run gradle task in the corresponding folder (in gradebook-service folder). I got similar error when I ran it in upper folder which contains api and service folder.
+
+compile project(":modules:customTables:customTables-api")
+
+
+<img src="<%=request.getContextPath()%>/images/close.gif">
+https://www.opensource-techblog.com/create-finder-method-for-service.html
+
+https://proliferay.com/liferay-auto-fields-example/
+
+<% if(description.length()>50){ %> 
+<%= description.substring(0, 50)+". . . " %>
+<% }else{ %><%= description %><% } %>
+
+
+MAIL TEMPLATE
+
+Server  Adm -mail - Complaint Management
+
+smtp.gmail.com
+Requires SSL: Yes
+Requires TLS: Yes (if available)
+Requires Authentication: Yes
+Port for SSL: 465
+Port for TLS/STARTTLS: 587
+
+import com.liferay.mail.kernel.model.MailMessage;
+import com.liferay.mail.kernel.service.MailServiceUtil;
+import javax.mail.internet.InternetAddress;
+
+Name, email, contact no, Department/Company Name, designation, state
+
+InternetAddress fromAddress = null;
+                InternetAddress toAddress = null;
+                 try {
+                    fromAddress = new InternetAddress(CustomTablePortletKeys.EMAIL_FROM_ADDRESS);
+                    toAddress = new InternetAddress(to);
+                    MailMessage mailMessage = new MailMessage();
+                    mailMessage.setTo(toAddress);
+                    mailMessage.setFrom(fromAddress);
+                    mailMessage.setSubject(subject);
+                    mailMessage.setBody(body);
+                    mailMessage.setHTMLFormat(true);
+                    MailServiceUtil.sendEmail(mailMessage);
+                    _log.info("Email sent to:"+toAddress);
+                } catch (AddressException e) {
+                    e.getMessage();
+                }
+
+
+mail.smtp.socketFactory.port: 465
+mail.smtp.socketFactory.class:javax.net.ssl.SSLSocketFactory
+mail.smtp.socketFactory.Fallback:false
+mail.smtp.auth:true
+
+https://stackoverflow.com/questions/26594097/javamail-exception-javax-mail-authenticationfailedexception-534-5-7-9-applicatio
+
+https://lifedev-solutions.blogspot.com/2021/04/mail-server-configuration-in-liferay.html
+
+
+http://liferayiseasy3.blogspot.com/2015/09/sending-mail-in-liferay-programmatically.html
+
+http://liferayiseasy3.blogspot.com/2015/09/sending-mail-in-liferay-programmatically.html
+
+Note: make sure you enabled “Less secure app access” in your Gmail account:
+
+Go to the Control Panel -> System -> Server Administration.
+
+Click on the “Mail” tab.
+
+Name
+
+Value
+
+Incoming POP Server
+
+pop.gmail.com
+
+Incoming Port
+
+995
+
+Use a Secure Network Connection
+
+true
+
+User Name
+
+<your-gmail-account>
+
+Password
+
+<your-gmail-password>
+
+Outgoing SMTP Server
+
+smtp.gmail.com
+
+Outgoing Port
+
+465
+
+Use a Secure Network Connection
+
+true
+
+Enable StartTLS
+
+true
+
+User Name
+
+<your-gmail-account>
+
+Password
+
+<your-gmail-password>
+
+Manually specify additional JavaMail properties to override the above configuration.
+
+mail.smtp.socketFactory.port: 465
+
+mail.smtp.socketFactory.class:javax.net.ssl.SSLSocketFactory
+
+mail.smtp.socketFactory.fallback:false
+
+mail.smtp.auth: true
+
+Reload issue
+
+work --> Delete all files
+logs ---> Delete all files
+osgi --> state ---> Delete all files
+tomcat --> work ---> Delete catalina
+tomcat --> temp ---> Delete all folders and files
+tomcat --> logs ----> Delete all logs
+
+server 
+tomcat --> bin --> setenv windows batch file (Windows)  --> xms4096-Xmx4096m -XX:MaxNewSize=2048 Metaspace 1536 
+
+Custom Language adding in Liferay
+
+Step 1: web.xml (C:\Liferay_YSR\projects\liferay-ce-portal-tomcat-7.4.3.40-ga40-20220901103436940\liferay-ce-portal-7.4.3.40-ga40\tomcat-9.0.56\webapps\ROOT\WEB-INF)
+<url-pattern>/te/c/portal/protected</url-pattern>
+			<url-pattern>/te-IN/c/portal/protected</url-pattern>
+			<url-pattern>/te_IN/c/portal/protected</url-pattern>
+
+Step2:
+
+shielded-container-web.xml
+
+<servlet-mapping>
+		<servlet-name>I18n Servlet</servlet-name>
+		<url-pattern>/te/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>I18n Servlet</servlet-name>
+		<url-pattern>/te-IN/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>I18n Servlet</servlet-name>
+		<url-pattern>/te_IN/*</url-pattern>
+	</servlet-mapping>
+
+Step3:
+
+portal-ext.properties
+
+include-and-override=portal-developer.properties
+javascript.single.page.application.enabled=false
+locales=en_US,te_IN
+locales.enabled=en_US,te_IN
+
+ 
+
+session.timeout=30
+session.timeout.redirect.on.expire=true
+company.default.home.url=/web/guest
+session.timeout.warning=0
+layout.friendly.url.page.not.found=/web/guest/page-404
+
+http.header.version.verbosity = off
+http.header.version.verbosity = off
+
+
+Step4:
+
+In Control Panel ---> Configuration ---> instance settings ---> Search for Language ---> Change laguage from Available to Current. 
+
+
+Creating API in Liferay
+
+In table-service module go to "com.kpmg.citizenTables.service.impl" package ---> VisitorServiceImpl for creating API
+
+Control Panel ---> Security ---> Service Access Policy ---> SYSTEM_DEFAULT ---> Switch to Advanced Mode ---> Add API
+
+com.kpmg.citizenTables.service.VisitorService#getaddvisitorcount
+com.kpmg.citizenTables.service.VisitorService#getvisitorcount
+com.liferay.portal.kernel.service.CountryService#getCountries
+com.liferay.portal.kernel.service.RegionService#getRegions
+
